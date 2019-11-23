@@ -1,7 +1,7 @@
 {
-  "name": "node-db4-challenge",
+  "name": "node-db-challenge",
   "version": "1.0.0",
-  "description": "Design the data model for a recipe book application",
+  "description": "Node DB Sprint",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js"

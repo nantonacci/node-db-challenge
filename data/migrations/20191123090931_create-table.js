@@ -35,6 +35,7 @@ exports.up = function(knex) {
       tbl.text("resource_description");
     })
     .createTable("project_resources", tbl => {
+      tbl.increments("id");
       tbl
         .integer("project_id")
         .unsigned()
@@ -49,7 +50,7 @@ exports.up = function(knex) {
         .references("resources.id")
         .onDelete("CASCADE")
         .onUpdate("CASCADE");
-      tbl.primary(["project_id", "resource_id"]);
+      // tbl.primary(["project_id", "resource_id"]);
     });
 };
 
