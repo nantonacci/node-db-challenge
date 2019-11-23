@@ -12,7 +12,12 @@ server.use(express.json());
 server.get("/api/projects", (req, res) => {
   db("projects")
     .then(project => {
-      res.status(200).json(project);
+      let formatted = {
+        ...project,
+        project_completed: project.project_completed ? true : false
+      };
+
+      res.status(200).json(formatted);
     })
     .catch(error => {
       res.status(500).json(error);
